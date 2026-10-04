@@ -40,7 +40,7 @@
     grid.innerHTML = PLUGINS.map(function (p, i) {
       var a = p.accent || ["#38e1ff", "#8b5cf6"];
       var media = p.image
-        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async">'
+        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" decoding="async">'
         : '<div class="ph"><div class="ph-grid"></div>' +
             (p.icon ? '<img class="ph-icon" src="' + esc(p.icon) + '" alt="">' : '<span class="ph-letter">' + esc(p.name.charAt(0)) + "</span>") +
             '<span class="ph-text">' + esc(t("card.placeholder")) + "</span></div>";
@@ -49,7 +49,7 @@
       if (f.vst3Win) badges += '<span class="compat">' + ICONS.win + esc(t("badge.win")) + "</span>";
       if (f.vst3Mac || f.au) badges += '<span class="compat">' + ICONS.mac + esc(t("badge.mac")) + "</span>";
       var feats = (pick(p.features) || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
-      return '<article class="card reveal" style="--a1:' + a[0] + ";--a2:" + a[1] + ";--d:" + (i * 90) + 'ms">' +
+      return '<article class="card" style="--a1:' + a[0] + ";--a2:" + a[1] + '">' +
         '<div class="card-media">' + media +
           '<span class="status status-' + esc(p.status || "soon") + '"><i></i>' + esc(t("status." + (p.status || "soon"))) + "</span>" +
         "</div>" +
@@ -62,7 +62,6 @@
           (f.standalone ? '<p class="card-standalone">' + esc(t("badge.standalone")) + "</p>" : "") +
         "</div></article>";
     }).join("");
-    observeReveal(grid.querySelectorAll(".reveal"));
   }
 
   // ---------- Lingua ----------
@@ -136,31 +135,12 @@
     document.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".lang")) close(false); });
   }
 
-  // ---------- Animazioni all'ingresso nella pagina ----------
-  var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-  }, { threshold: 0.12 }) : null;
-  function observeReveal(nodes) {
-    Array.prototype.forEach.call(nodes, function (n) { io ? io.observe(n) : n.classList.add("in"); });
-  }
-
   // ---------- Intestazione: si scurisce scorrendo ----------
   function initHeader() {
     var h = document.querySelector(".site-header");
     var onScroll = function () { h.classList.toggle("scrolled", window.scrollY > 12); };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-  }
-
-  // ---------- Bagliore che segue il mouse sulle schede ----------
-  function initGlow() {
-    document.addEventListener("pointermove", function (e) {
-      var card = e.target.closest && e.target.closest(".card");
-      if (!card) return;
-      var r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
-      card.style.setProperty("--my", (e.clientY - r.top) + "px");
-    }, { passive: true });
   }
 
   // ---------- Niente zoom con le dita (Safari su iPhone ignora user-scalable=no) ----------
@@ -175,9 +155,7 @@
     document.documentElement.classList.add("js");
     buildLanguageMenu();
     applyLanguage(initialLanguage());
-    observeReveal(document.querySelectorAll(".reveal:not(.card)"));
     initHeader();
-    initGlow();
     var y = document.getElementById("year");
     if (y) y.textContent = String(Math.max(2026, new Date().getFullYear()));
   });
