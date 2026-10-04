@@ -163,6 +163,14 @@
     }, { passive: true });
   }
 
+  // ---------- Niente zoom con le dita (Safari su iPhone ignora user-scalable=no) ----------
+  ["gesturestart", "gesturechange", "gestureend"].forEach(function (type) {
+    document.addEventListener(type, function (e) { e.preventDefault(); }, { passive: false });
+  });
+  document.addEventListener("touchmove", function (e) {
+    if (e.touches && e.touches.length > 1) e.preventDefault();   // due dita: niente zoom
+  }, { passive: false });
+
   document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.classList.add("js");
     buildLanguageMenu();

@@ -23,10 +23,12 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+       overflow-x: hidden; overflow-x: clip; touch-action: pan-x pan-y; }   /* niente zoom con le dita */
 body {
   margin: 0; background: var(--bg); color: var(--text);
-  font: 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  font: 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; overflow-x: clip;
+  touch-action: pan-x pan-y; -webkit-tap-highlight-color: transparent;
 }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
@@ -86,11 +88,17 @@ p { margin: 0; }
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 120px 0 80px; overflow: hidden; isolation: isolate; }
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
-.orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; animation: float 18s ease-in-out infinite; }
-.orb-1 { width: 520px; height: 520px; left: -140px; top: -120px; background: radial-gradient(circle, rgba(46, 242, 255, .55), transparent 65%); }
-.orb-2 { width: 620px; height: 620px; right: -200px; top: 10%; background: radial-gradient(circle, rgba(155, 92, 255, .6), transparent 65%); animation-delay: -6s; }
-.orb-3 { width: 380px; height: 380px; left: 35%; bottom: -160px; background: radial-gradient(circle, rgba(182, 255, 59, .32), transparent 65%); animation-delay: -12s; }
-@keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(40px, -30px) scale(1.06); } 66% { transform: translate(-30px, 25px) scale(.96); } }
+/* luci di sfondo: gradienti gia' sfumati (niente filtro blur, che sul telefono si sgrana) */
+.orb { position: absolute; border-radius: 50%; opacity: .5; pointer-events: none; }
+.orb-1 { width: 760px; height: 760px; left: -300px; top: -300px; background: radial-gradient(circle closest-side, rgba(46, 242, 255, .42), rgba(46, 242, 255, .12) 55%, transparent); }
+.orb-2 { width: 860px; height: 860px; right: -360px; top: -8%; background: radial-gradient(circle closest-side, rgba(155, 92, 255, .48), rgba(155, 92, 255, .14) 55%, transparent); }
+.orb-3 { width: 560px; height: 560px; left: 30%; bottom: -320px; background: radial-gradient(circle closest-side, rgba(182, 255, 59, .22), rgba(182, 255, 59, .06) 55%, transparent); }
+@media (hover: hover) and (pointer: fine) and (min-width: 761px) {
+  /* solo su computer: le luci si spostano piano (solo traslazione, nessun ingrandimento) */
+  .orb { animation: float 18s ease-in-out infinite; will-change: transform; }
+  .orb-2 { animation-delay: -6s; } .orb-3 { animation-delay: -12s; }
+}
+@keyframes float { 0%, 100% { transform: translate3d(0, 0, 0); } 33% { transform: translate3d(40px, -30px, 0); } 66% { transform: translate3d(-30px, 25px, 0); } }
 .grid-floor {
   position: absolute; inset: auto -20% -10% -20%; height: 60%;
   background-image: linear-gradient(rgba(46, 242, 255, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 242, 255, .14) 1px, transparent 1px);
@@ -130,13 +138,14 @@ p { margin: 0; }
 
 /* barre "audio" animate */
 .wave { position: absolute; z-index: -1; right: 24px; bottom: -40px; display: flex; align-items: flex-end; gap: 6px; height: 120px; opacity: .55; pointer-events: none; }
-.wave span { width: 6px; border-radius: 3px; background: linear-gradient(to top, var(--violet), var(--cyan)); animation: eq 1.4s ease-in-out infinite; height: 20%; }
+.wave span { width: 6px; height: 100%; border-radius: 3px; background: linear-gradient(to top, var(--violet), var(--cyan));
+  transform-origin: bottom; transform: scaleY(.2); animation: eq 1.4s ease-in-out infinite; }
 .wave span:nth-child(3n) { animation-duration: 1.1s; }
 .wave span:nth-child(4n) { animation-duration: 1.7s; background: linear-gradient(to top, var(--cyan), var(--acid)); }
 .wave span:nth-child(5n) { animation-duration: .9s; }
 .wave span:nth-child(odd) { animation-delay: -.4s; }
 .wave span:nth-child(7n) { animation-delay: -.8s; }
-@keyframes eq { 0%, 100% { height: 14%; } 50% { height: 100%; } }
+@keyframes eq { 0%, 100% { transform: scaleY(.14); } 50% { transform: scaleY(1); } }
 
 /* ---------- Sezioni ---------- */
 .section { padding: 110px 0; position: relative; }
@@ -266,6 +275,9 @@ p { margin: 0; }
 .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0ms); }
 .js .reveal.in { opacity: 1; transform: none; }
 .js .card.reveal.in { transition: opacity .8s var(--ease) var(--d, 0ms), transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease); }
+.js .card.reveal.in:hover { transform: translateY(-8px); }
+.js .why.reveal.in:hover { transform: translateY(-4px); }
+.js .req-col.reveal.in:hover { transform: translateY(-3px); }   /* dopo la comparsa la scheda si solleva ancora */
 .hero .reveal:nth-child(2) { --d: 80ms; } .hero .reveal:nth-child(3) { --d: 160ms; }
 .hero .reveal:nth-child(4) { --d: 240ms; } .hero .reveal:nth-child(5) { --d: 320ms; }
 
@@ -290,11 +302,28 @@ p { margin: 0; }
   .why-grid, .req-grid { grid-template-columns: 1fr; gap: 14px; }
   .foot-grid { grid-template-columns: 1fr; gap: 26px; margin-top: 56px; }
   .site-footer { padding-top: 72px; }
-  .orb { filter: blur(60px); }
+  .grid-floor { display: none; }
+  .orb-1 { width: 520px; height: 520px; left: -260px; top: -220px; }
+  .orb-2 { width: 560px; height: 560px; right: -300px; top: 4%; }
+  .orb-3 { display: none; }
 }
 @media (max-width: 380px) {
   .brand span { letter-spacing: .14em; font-size: 13px; }
   .card-body { padding: 18px 18px 22px; }
+}
+
+/* ---------- Schermi touch: il tocco mentre scorri non deve lasciare schede sollevate o immagini ingrandite ---------- */
+@media (hover: none), (pointer: coarse) {
+  .card:hover, .js .card.reveal.in:hover, .why:hover, .js .why.reveal.in:hover, .req-col:hover, .js .req-col.reveal.in:hover,
+  .btn:hover, .brand:hover img { transform: none; }
+  .card:hover { box-shadow: none; border-color: var(--line); }
+  .card:hover::before { opacity: .25; }
+  .card:hover::after { opacity: 0; }
+  .card:hover .card-media > img { transform: none; filter: saturate(.92); }
+  .card:hover .card-icon { transform: none; }
+  .card:hover .compat { border-color: var(--line-2); background: rgba(255, 255, 255, .04); }
+  .card-media > img { transform: none; }
+  .js .reveal { transform: translateY(16px); }
 }
 
 /* ---------- Meno movimento, se richiesto dal sistema ---------- */
