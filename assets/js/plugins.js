@@ -144,5 +144,32 @@ window.TONI_PLUGINS = [
       de: ["Aufnahme vom Eingang oder Resampling", "Time-Stretch im Tempo, Auto-Chop auf die Pads", "ADSR, 4 Filter, 2 LFOs auf Pitch, Time oder Filter"],
       fr: ["Enregistrement depuis l'entrée ou resample", "Time stretch au tempo, auto-chop sur les pads", "ADSR, 4 filtres, 2 LFO sur pitch, temps ou filtre"]
     }
+  },
+  {
+    id: "officina",
+    name: "Officina",
+    image: "assets/img/officina.webp",
+    icon: "assets/img/officina-icon.svg",
+    accent: ["#ff4d5e", "#ffa04d"],
+    status: "soon",
+    formats: { vst3Win: true, vst3Mac: true, au: true, standalone: true },
+    tag: {
+      en: "Multi-FX", it: "Multi-effetto", es: "Multiefectos",
+      de: "Multi-Effekt", fr: "Multi-effet"
+    },
+    text: {
+      en: "A pedalboard inside your DAW: glitch, filter, delay, phaser, chorus, tape echo, spring reverb and lo-fi, each one a pedal with its footswitch. Drag the pedals to change the order of the chain.",
+      it: "Una pedaliera dentro la tua DAW: glitch, filtro, delay, phaser, chorus, eco a nastro, riverbero a molla e lo-fi, ognuno un pedale con il suo interruttore. Trascina i pedali per cambiare l'ordine della catena.",
+      es: "Una pedalera dentro de tu DAW: glitch, filtro, delay, phaser, chorus, eco de cinta, reverb de muelles y lo-fi, cada uno un pedal con su interruptor. Arrastra los pedales para cambiar el orden de la cadena.",
+      de: "Ein Pedalboard in deiner DAW: Glitch, Filter, Delay, Phaser, Chorus, Bandecho, Federhall und Lo-Fi, jedes ein Pedal mit eigenem Fußschalter. Zieh die Pedale, um die Reihenfolge der Kette zu ändern.",
+      fr: "Un pedalboard dans votre DAW : glitch, filtre, delay, phaser, chorus, écho à bande, réverbe à ressort et lo-fi, chacun une pédale avec son footswitch. Faites glisser les pédales pour changer l'ordre de la chaîne."
+    },
+    features: {
+      en: ["8 classic effect pedals", "Drag to reorder the chain, click-free", "Tempo-synced glitch and echoes, safety limiter"],
+      it: ["8 pedali con gli effetti classici", "Trascini e riordini la catena, senza click", "Glitch ed eco a tempo, limitatore di sicurezza"],
+      es: ["8 pedales de efectos clásicos", "Arrastra y reordena la cadena, sin clics", "Glitch y ecos al tempo, limitador de seguridad"],
+      de: ["8 klassische Effektpedale", "Kette per Ziehen umsortieren, klickfrei", "Glitch und Echos im Tempo, Sicherheitslimiter"],
+      fr: ["8 pédales d'effets classiques", "Réordonnez la chaîne par glisser, sans clic", "Glitch et échos au tempo, limiteur de sécurité"]
+    }
   }
 ];

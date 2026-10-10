@@ -403,5 +403,84 @@ window.TONI_DETAILS = {
       de: ["64-Bit-Dual-Core-Prozessor oder besser (Quad-Core empfohlen für viele Stretch-Stimmen)", "4 GB RAM (8 GB empfohlen; der Speicher wächst mit den geladenen Samples)", "Etwa 150 MB freier Speicherplatz plus deine Samples", "Bildschirm 1280 × 800 oder größer", "MIDI-Controller und Audio-Interface für Aufnahmen (optional)"],
       fr: ["Processeur double cœur 64 bits ou plus (quatre cœurs recommandés pour beaucoup de voix en Stretch)", "4 Go de RAM (8 Go recommandés ; la mémoire augmente avec les samples chargés)", "Environ 150 Mo d'espace disque libre, plus vos samples", "Écran 1280 × 800 ou plus grand", "Contrôleur MIDI et interface audio pour enregistrer (facultatif)"]
     }
+  },
+
+  /* ------------------------------------------------------------------ */
+  officina: {
+    short: {
+      en: "A multi-effect pedalboard: 8 classic effects in a chain you reorder by dragging.",
+      it: "Pedaliera multi-effetto: 8 effetti classici in una catena che riordini trascinando.",
+      es: "Pedalera multiefectos: 8 efectos clásicos en una cadena que reordenas arrastrando.",
+      de: "Multi-Effekt-Pedalboard: 8 klassische Effekte in einer Kette, die du per Ziehen umsortierst.",
+      fr: "Pedalboard multi-effet : 8 effets classiques dans une chaîne que vous réordonnez par glisser."
+    },
+    long: {
+      en: [
+        "Officina puts a pedalboard inside your DAW. Eight effects sit side by side, each one a pedal with the classic name of its effect: Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb and Lo-Fi. Stomp the footswitch to turn a pedal on, turn its three knobs like on a real stompbox, or click it to open all its controls.",
+        "The order of the chain is up to you: drag a pedal left or right and the sound follows, with a short crossfade and no clicks, even while the music plays. Glitch, Delay and Tape Echo lock to the song tempo, pedals that are off use no CPU, and a safety limiter keeps even runaway feedback below −0.3 dBFS. Use it on guitars, synths, vocals, drums or a whole mix."
+      ],
+      it: [
+        "Officina porta una pedaliera dentro la tua DAW. Otto effetti uno accanto all'altro, ognuno un pedale con il nome classico del suo effetto: Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb e Lo-Fi. Premi l'interruttore per accendere un pedale, gira le sue tre manopole come su un pedale vero, oppure cliccalo per aprire tutti i suoi comandi.",
+        "L'ordine della catena lo decidi tu: trascina un pedale a destra o a sinistra e il suono lo segue, con una breve dissolvenza e senza click, anche mentre la musica suona. Glitch, Delay e Tape Echo vanno a tempo col brano, i pedali spenti non usano CPU e un limitatore di sicurezza tiene anche il feedback più estremo sotto i −0,3 dBFS. Usalo su chitarre, synth, voci, batterie o un mix intero."
+      ],
+      es: [
+        "Officina pone una pedalera dentro de tu DAW. Ocho efectos uno al lado del otro, cada uno un pedal con el nombre clásico de su efecto: Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb y Lo-Fi. Pisa el interruptor para encender un pedal, gira sus tres perillas como en un pedal real o haz clic para abrir todos sus controles.",
+        "El orden de la cadena lo decides tú: arrastra un pedal a la derecha o a la izquierda y el sonido lo sigue, con un breve fundido y sin clics, incluso mientras suena la música. Glitch, Delay y Tape Echo van al tempo de la canción, los pedales apagados no usan CPU y un limitador de seguridad mantiene incluso la realimentación más extrema por debajo de −0,3 dBFS. Úsalo en guitarras, sintes, voces, baterías o una mezcla entera."
+      ],
+      de: [
+        "Officina bringt ein Pedalboard in deine DAW. Acht Effekte nebeneinander, jeder ein Pedal mit dem klassischen Namen seines Effekts: Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb und Lo-Fi. Tritt auf den Fußschalter, um ein Pedal einzuschalten, dreh an seinen drei Reglern wie an einem echten Pedal oder klick es an, um alle seine Regler zu öffnen.",
+        "Die Reihenfolge der Kette bestimmst du: zieh ein Pedal nach links oder rechts und der Klang folgt, mit kurzer Überblendung und ohne Klicks, auch während die Musik läuft. Glitch, Delay und Tape Echo laufen im Songtempo, ausgeschaltete Pedale brauchen keine CPU und ein Sicherheitslimiter hält selbst ausuferndes Feedback unter −0,3 dBFS. Für Gitarren, Synths, Vocals, Drums oder einen ganzen Mix."
+      ],
+      fr: [
+        "Officina met un pedalboard dans votre DAW. Huit effets côte à côte, chacun une pédale portant le nom classique de son effet : Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb et Lo-Fi. Appuyez sur le footswitch pour allumer une pédale, tournez ses trois boutons comme sur une vraie pédale, ou cliquez dessus pour ouvrir tous ses réglages.",
+        "L'ordre de la chaîne, c'est vous qui le choisissez : faites glisser une pédale à gauche ou à droite et le son suit, avec un court fondu et sans clic, même pendant la lecture. Glitch, Delay et Tape Echo suivent le tempo du morceau, les pédales éteintes n'utilisent pas de CPU et un limiteur de sécurité garde même un feedback incontrôlé sous −0,3 dBFS. Sur guitares, synthés, voix, batteries ou un mix entier."
+      ]
+    },
+    how: {
+      en: [
+        ["Switch on", "Click the footswitch of the pedals you want: the red LED lights up. Pedals that are off use no CPU."],
+        ["Arrange", "Drag the pedals left or right to choose the order of the chain: a delay before the reverb sounds different from one after it."],
+        ["Tweak", "Turn the three knobs on the pedal, or click it to open all its controls in the panel below."],
+        ["Blend", "Set input, mix and output in GLOBAL; Safe Limit keeps the output below −0.3 dBFS. Save your board as a preset."]
+      ],
+      it: [
+        ["Accendi", "Clicca l'interruttore dei pedali che vuoi: si accende il LED rosso. I pedali spenti non usano CPU."],
+        ["Disponi", "Trascina i pedali a destra o a sinistra per scegliere l'ordine della catena: un delay prima del riverbero suona diverso da uno dopo."],
+        ["Regola", "Gira le tre manopole sul pedale, oppure cliccalo per aprire tutti i suoi comandi nel pannello sotto."],
+        ["Dosa", "Regola ingresso, mix e uscita in GLOBAL; Safe Limit tiene l'uscita sotto i −0,3 dBFS. Salva la tua pedaliera come preset."]
+      ],
+      es: [
+        ["Enciende", "Haz clic en el interruptor de los pedales que quieras: se enciende el LED rojo. Los pedales apagados no usan CPU."],
+        ["Ordena", "Arrastra los pedales a la derecha o a la izquierda para elegir el orden de la cadena: un delay antes de la reverb suena distinto que después."],
+        ["Ajusta", "Gira las tres perillas del pedal, o haz clic para abrir todos sus controles en el panel inferior."],
+        ["Mezcla", "Ajusta entrada, mix y salida en GLOBAL; Safe Limit mantiene la salida por debajo de −0,3 dBFS. Guarda tu pedalera como preset."]
+      ],
+      de: [
+        ["Einschalten", "Klick auf den Fußschalter der gewünschten Pedale: die rote LED leuchtet. Ausgeschaltete Pedale brauchen keine CPU."],
+        ["Anordnen", "Zieh die Pedale nach links oder rechts, um die Reihenfolge zu wählen: ein Delay vor dem Hall klingt anders als danach."],
+        ["Einstellen", "Dreh an den drei Reglern des Pedals oder klick es an, um alle seine Regler im Feld darunter zu öffnen."],
+        ["Mischen", "Stell Eingang, Mix und Ausgang in GLOBAL ein; Safe Limit hält den Ausgang unter −0,3 dBFS. Speichere dein Board als Preset."]
+      ],
+      fr: [
+        ["Allumer", "Cliquez sur le footswitch des pédales voulues : la LED rouge s'allume. Les pédales éteintes n'utilisent pas de CPU."],
+        ["Disposer", "Faites glisser les pédales à gauche ou à droite pour choisir l'ordre : un delay avant la réverbe ne sonne pas comme après."],
+        ["Régler", "Tournez les trois boutons de la pédale, ou cliquez dessus pour ouvrir tous ses réglages dans le panneau du bas."],
+        ["Doser", "Réglez entrée, mix et sortie dans GLOBAL ; Safe Limit garde la sortie sous −0,3 dBFS. Enregistrez votre pedalboard en preset."]
+      ]
+    },
+    specs: {
+      en: [["Type", "Multi-effect (insert or send)"], ["Pedals", "Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb, Lo-Fi"], ["Chain", "Any order, drag to reorder, click-free"], ["Tempo sync", "Glitch, Delay, Tape Echo"], ["Channels", "Mono and stereo"], ["Latency", "None"], ["CPU", "About 1.5 % of one core with all 8 pedals on (48 kHz)"], ["Presets", "94: 14 combinations and 10 for each pedal; user presets, A/B"]],
+      it: [["Tipo", "Multi-effetto (insert o mandata)"], ["Pedali", "Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb, Lo-Fi"], ["Catena", "Ordine libero, si riordina trascinando, senza click"], ["A tempo", "Glitch, Delay, Tape Echo"], ["Canali", "Mono e stereo"], ["Latenza", "Nessuna"], ["CPU", "Circa 1,5 % di un core con tutti gli 8 pedali accesi (48 kHz)"], ["Preset", "94: 14 combinazioni e 10 per ogni pedale; preset utente, A/B"]],
+      es: [["Tipo", "Multiefectos (insert o envío)"], ["Pedales", "Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb, Lo-Fi"], ["Cadena", "Orden libre, se reordena arrastrando, sin clics"], ["Al tempo", "Glitch, Delay, Tape Echo"], ["Canales", "Mono y estéreo"], ["Latencia", "Ninguna"], ["CPU", "Alrededor del 1,5 % de un núcleo con los 8 pedales encendidos (48 kHz)"], ["Presets", "94: 14 combinaciones y 10 para cada pedal; presets de usuario, A/B"]],
+      de: [["Typ", "Multi-Effekt (Insert oder Send)"], ["Pedale", "Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb, Lo-Fi"], ["Kette", "Beliebige Reihenfolge, per Ziehen umsortieren, klickfrei"], ["Tempo-Sync", "Glitch, Delay, Tape Echo"], ["Kanäle", "Mono und Stereo"], ["Latenz", "Keine"], ["CPU", "Etwa 1,5 % eines Kerns mit allen 8 Pedalen an (48 kHz)"], ["Presets", "94: 14 Kombinationen und 10 pro Pedal; eigene Presets, A/B"]],
+      fr: [["Type", "Multi-effet (insert ou envoi)"], ["Pédales", "Glitch, Filter, Delay, Phaser, Chorus, Tape Echo, Spring Reverb, Lo-Fi"], ["Chaîne", "Ordre libre, réordonnable par glisser, sans clic"], ["Synchro tempo", "Glitch, Delay, Tape Echo"], ["Canaux", "Mono et stéréo"], ["Latence", "Aucune"], ["CPU", "Environ 1,5 % d'un cœur avec les 8 pédales allumées (48 kHz)"], ["Presets", "94 : 14 combinaisons et 10 pour chaque pédale ; presets utilisateur, A/B"]]
+    },
+    hw: {
+      en: ["64-bit dual-core processor or better", "4 GB RAM (8 GB recommended)", "About 150 MB of free disk space", "Screen 1280 × 800 or larger", "Audio interface to play live in the Standalone (optional)"],
+      it: ["Processore dual-core a 64 bit o superiore", "4 GB di RAM (consigliati 8 GB)", "Circa 150 MB di spazio libero su disco", "Schermo da 1280 × 800 o più grande", "Scheda audio per suonare dal vivo nello Standalone (facoltativa)"],
+      es: ["Procesador de doble núcleo de 64 bits o superior", "4 GB de RAM (8 GB recomendados)", "Unos 150 MB de espacio libre en disco", "Pantalla de 1280 × 800 o mayor", "Interfaz de audio para tocar en directo en el Standalone (opcional)"],
+      de: ["64-Bit-Dual-Core-Prozessor oder besser", "4 GB RAM (8 GB empfohlen)", "Etwa 150 MB freier Speicherplatz", "Bildschirm 1280 × 800 oder größer", "Audio-Interface zum Live-Spielen im Standalone (optional)"],
+      fr: ["Processeur double cœur 64 bits ou plus", "4 Go de RAM (8 Go recommandés)", "Environ 150 Mo d'espace disque libre", "Écran 1280 × 800 ou plus grand", "Interface audio pour jouer en direct dans le Standalone (facultatif)"]
+    }
   }
 };

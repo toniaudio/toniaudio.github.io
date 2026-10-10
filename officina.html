@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>Plugins · Toni Audio</title>
-<meta name="description" content="The Toni Audio plugin collection: dynamics, vocals, mastering, drum machine, sampler and multi-effect. VST3, AU and Standalone for Windows and macOS.">
+<title>Officina · Toni Audio</title>
+<meta name="description" content="Officina by Toni Audio: VST3, AU and Standalone for Windows and macOS.">
 <meta name="theme-color" content="#0f0f11">
 <meta name="color-scheme" content="dark">
-<meta property="og:title" content="Plugins · Toni Audio">
-<meta property="og:description" content="The Toni Audio plugin collection: dynamics, vocals, mastering, drum machine, sampler and multi-effect. VST3, AU and Standalone for Windows and macOS.">
-<meta property="og:image" content="https://toniaudio.github.io/assets/img/vetta.webp">
-<meta property="og:url" content="https://toniaudio.github.io/plugins.html">
+<meta property="og:title" content="Officina · Toni Audio">
+<meta property="og:description" content="Officina by Toni Audio: VST3, AU and Standalone for Windows and macOS.">
+<meta property="og:image" content="https://toniaudio.github.io/assets/img/officina.webp">
+<meta property="og:url" content="https://toniaudio.github.io/officina.html">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -19,7 +19,7 @@
 <script src="assets/js/details.js" defer></script>
 <script src="assets/js/site.js" defer></script>
 </head>
-<body data-page="plugins">
+<body data-page="detail" data-plugin="officina">
 <a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
 
 <!-- ============ Intestazione ============ -->
@@ -50,28 +50,9 @@
 </header>
 
 <main id="main">
-  <section class="page-hero">
-    <div class="hero-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="./" data-i18n="crumb.home">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="crumb.plugins">Plugins</span></nav>
-      <p class="kicker" data-i18n="plugins.kicker">The collection</p>
-      <h1 data-i18n="plugins.title">Our plugins</h1>
-      <p class="section-sub" data-i18n="plugins.sub">In final validation: the release is coming soon.</p>
-    </div>
-  </section>
-  <section class="section section-tight">
-    <div class="wrap">
-      <div class="catalog">
-        <div class="catalog-head">
-          <h2 data-i18n="plugins.box">The collection</h2>
-          <p id="plugin-count" class="muted"></p>
-        </div>
-        <!-- le anteprime si creano da assets/js/plugins.js e details.js -->
-        <div id="plugin-grid" class="plugin-grid"></div>
-        <noscript><ul class="noscript-list"><li><a href="equilibra.html">Equilibra</a></li><li><a href="lirica.html">Lirica</a></li><li><a href="vetta.html">Vetta</a></li><li><a href="materia.html">Materia</a></li><li><a href="plasma.html">Plasma</a></li><li><a href="officina.html">Officina</a></li></ul></noscript>
-      </div>
-    </div>
-  </section>
+  <!-- la pagina si crea da assets/js/plugins.js e details.js -->
+  <div id="detail" class="detail"></div>
+  <noscript><div class="wrap noscript-detail"><h1>Officina</h1><p><a href="plugins.html">Plugins</a></p></div></noscript>
 </main>
 
 <!-- ============ Piè di pagina: contatti ============ -->
