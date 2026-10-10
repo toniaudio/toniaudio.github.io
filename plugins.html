@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Plugins · Toni Audio</title>
+<meta name="description" content="The Toni Audio plugin collection: dynamics, vocals, mastering, drum machine and sampler. VST3, AU and Standalone for Windows and macOS.">
+<meta name="theme-color" content="#0f0f11">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Plugins · Toni Audio">
+<meta property="og:description" content="The Toni Audio plugin collection: dynamics, vocals, mastering, drum machine and sampler. VST3, AU and Standalone for Windows and macOS.">
+<meta property="og:image" content="https://toniaudio.github.io/assets/img/vetta.webp">
+<meta property="og:url" content="https://toniaudio.github.io/plugins.html">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/plugins.js" defer></script>
+<script src="assets/js/details.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="plugins">
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+<!-- ============ Intestazione ============ -->
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="./" aria-label="Toni Audio">
+      <img src="assets/img/logo.svg" alt="" width="34" height="34">
+      <span>TONI <b>AUDIO</b></span>
+    </a>
+    <nav class="main-nav" aria-label="Menu">
+      <a href="./" data-i18n="nav.home">Home</a>
+      <a href="plugins.html" aria-current="page" data-i18n="nav.plugins">Plugins</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <button id="lang-btn" class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="nav.language" aria-label="Language">
+        <span class="flag"></span><span class="lang-code">EN</span>
+        <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul id="lang-menu" class="lang-menu" role="listbox" hidden></ul>
+    </div>
+  </div>
+  <nav class="mobile-nav" aria-label="Menu">
+    <a href="./" data-i18n="nav.home">Home</a>
+    <a href="plugins.html" aria-current="page" data-i18n="nav.plugins">Plugins</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="hero-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./" data-i18n="crumb.home">Home</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="crumb.plugins">Plugins</span></nav>
+      <p class="kicker" data-i18n="plugins.kicker">The collection</p>
+      <h1 data-i18n="plugins.title">Our plugins</h1>
+      <p class="section-sub" data-i18n="plugins.sub">In final validation: the release is coming soon.</p>
+    </div>
+  </section>
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="catalog">
+        <div class="catalog-head">
+          <h2 data-i18n="plugins.box">The collection</h2>
+          <p id="plugin-count" class="muted"></p>
+        </div>
+        <!-- le anteprime si creano da assets/js/plugins.js e details.js -->
+        <div id="plugin-grid" class="plugin-grid"></div>
+        <noscript><ul class="noscript-list"><li><a href="equilibra.html">Equilibra</a></li><li><a href="lirica.html">Lirica</a></li><li><a href="vetta.html">Vetta</a></li><li><a href="materia.html">Materia</a></li><li><a href="plasma.html">Plasma</a></li></ul></noscript>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ Piè di pagina: contatti ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="contact" class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="./" aria-label="Toni Audio"><img src="assets/img/logo.svg" alt="" width="30" height="30"><span>TONI <b>AUDIO</b></span></a>
+        <p class="muted" data-i18n="foot.tagline">Audio plugins by Antonio Pironti.</p>
+      </div>
+      <div>
+        <h4 data-i18n="nav.contact">Contact</h4>
+        <p class="muted" data-i18n="foot.contact">Support and security reports</p>
+        <a class="mail" href="mailto:toniaudio.plugins@gmail.com">toniaudio.plugins@gmail.com</a>
+      </div>
+      <div>
+        <h4><a class="foot-h-link" href="plugins.html" data-i18n="nav.plugins">Plugins</a></h4>
+        <ul class="foot-links">
+          <li><a href="equilibra.html">Equilibra</a></li>
+          <li><a href="lirica.html">Lirica</a></li>
+          <li><a href="vetta.html">Vetta</a></li>
+          <li><a href="materia.html">Materia</a></li>
+          <li><a href="plasma.html">Plasma</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot.links">Information</h4>
+        <ul class="foot-links">
+          <li><a href="security.html" data-i18n="foot.security">Security</a></li>
+          <li><a href="conformity.html" data-i18n="foot.conformity">EU conformity</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-note muted" data-i18n="foot.note">Download the plugins only from this site or from authorised stores. Installers are never sent by e-mail.</p>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Antonio Pironti – Toni Audio. <span data-i18n="foot.rights">All rights reserved.</span></span>
+      <a href="#main" class="to-top" data-i18n="foot.top">Back to top</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

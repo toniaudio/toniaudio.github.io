@@ -1,5 +1,5 @@
 /* =====================================================================
-   TONI AUDIO - SITO: lingua, schede dei plugin, animazioni
+   TONI AUDIO - SITO: lingua, catalogo e pagine dei plugin
    ===================================================================== */
 (function () {
   "use strict";
@@ -33,44 +33,166 @@
     });
   }
 
-  // ---------- Schede dei plugin ----------
-  function renderPlugins() {
+  var DETAILS = window.TONI_DETAILS || {};
+  var PAGE = document.body ? document.body.getAttribute("data-page") : "home";
+  var ARROW = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var REQ_ICONS = {
+    win: ICONS.win,
+    mac: ICONS.mac,
+    host: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 15V11M10 15V9M13 15v-3M16 15V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    hw: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+  };
+
+  function findPlugin(id) {
+    for (var i = 0; i < PLUGINS.length; i++) if (PLUGINS[i].id === id) return PLUGINS[i];
+    return null;
+  }
+  function accentStyle(p) {
+    var a = p.accent || ["#38e1ff", "#8b5cf6"];
+    return "--a1:" + a[0] + ";--a2:" + a[1];
+  }
+  function media(p) {
+    return p.image
+      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" decoding="async">'
+      : '<div class="ph"><div class="ph-grid"></div>' +
+          (p.icon ? '<img class="ph-icon" src="' + esc(p.icon) + '" alt="">' : '<span class="ph-letter">' + esc(p.name.charAt(0)) + "</span>") +
+          '<span class="ph-text">' + esc(t("card.placeholder")) + "</span></div>";
+  }
+  function statusPill(p) {
+    var s = p.status || "soon";
+    return '<span class="status status-' + esc(s) + '"><i></i>' + esc(t("status." + s)) + "</span>";
+  }
+  function badges(p) {
+    var f = p.formats || {}, b = "";
+    if (f.vst3Win) b += '<span class="compat">' + ICONS.win + esc(t("badge.win")) + "</span>";
+    if (f.vst3Mac || f.au) b += '<span class="compat">' + ICONS.mac + esc(t("badge.mac")) + "</span>";
+    return b;
+  }
+  function head(p, tagName) {
+    return '<div class="card-head">' + (p.icon ? '<img class="card-icon" src="' + esc(p.icon) + '" alt="" width="44" height="44">' : "") +
+      "<div><" + tagName + ">" + esc(p.name) + "</" + tagName + '><p class="card-tag">' + esc(pick(p.tag)) + "</p></div></div>";
+  }
+  function list(items) {
+    return (items || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
+  }
+
+  // ---------- Pagina "Plugin": anteprime cliccabili ----------
+  function renderCatalog() {
     var grid = document.getElementById("plugin-grid");
     if (!grid) return;
-    grid.innerHTML = PLUGINS.map(function (p, i) {
-      var a = p.accent || ["#38e1ff", "#8b5cf6"];
-      var media = p.image
-        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" decoding="async">'
-        : '<div class="ph"><div class="ph-grid"></div>' +
-            (p.icon ? '<img class="ph-icon" src="' + esc(p.icon) + '" alt="">' : '<span class="ph-letter">' + esc(p.name.charAt(0)) + "</span>") +
-            '<span class="ph-text">' + esc(t("card.placeholder")) + "</span></div>";
-      var f = p.formats || {};
-      var badges = "";
-      if (f.vst3Win) badges += '<span class="compat">' + ICONS.win + esc(t("badge.win")) + "</span>";
-      if (f.vst3Mac || f.au) badges += '<span class="compat">' + ICONS.mac + esc(t("badge.mac")) + "</span>";
-      var feats = (pick(p.features) || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
-      return '<article class="card" style="--a1:' + a[0] + ";--a2:" + a[1] + '">' +
-        '<div class="card-media">' + media +
-          '<span class="status status-' + esc(p.status || "soon") + '"><i></i>' + esc(t("status." + (p.status || "soon"))) + "</span>" +
-        "</div>" +
-        '<div class="card-body">' +
-          '<div class="card-head">' + (p.icon ? '<img class="card-icon" src="' + esc(p.icon) + '" alt="" width="44" height="44">' : "") +
-            "<div><h3>" + esc(p.name) + '</h3><p class="card-tag">' + esc(pick(p.tag)) + "</p></div></div>" +
-          '<p class="card-text">' + esc(pick(p.text)) + "</p>" +
-          '<ul class="card-feats">' + feats + "</ul>" +
-          '<div class="card-badges">' + badges + "</div>" +
-          (f.standalone ? '<p class="card-standalone">' + esc(t("badge.standalone")) + "</p>" : "") +
-        "</div></article>";
+    grid.innerHTML = PLUGINS.map(function (p) {
+      var d = DETAILS[p.id] || {};
+      return '<a class="card card-link" href="' + esc(p.id) + '.html" style="' + accentStyle(p) + '">' +
+        '<div class="card-media">' + media(p) + statusPill(p) + "</div>" +
+        '<div class="card-body">' + head(p, "h3") +
+          '<p class="card-text">' + esc(pick(d.short) || pick(p.text)) + "</p>" +
+          '<span class="card-more">' + esc(t("card.more")) + ARROW + "</span>" +
+        "</div></a>";
     }).join("");
+    var c = document.getElementById("plugin-count");
+    if (c) c.textContent = t("plugins.count").replace("{n}", PLUGINS.length);
+  }
+
+  // ---------- Pagina di un plugin ----------
+  function renderDetail() {
+    var box = document.getElementById("detail");
+    if (!box) return;
+    var id = document.body.getAttribute("data-plugin");
+    var p = findPlugin(id), d = DETAILS[id] || {};
+    if (!p) { box.innerHTML = '<div class="wrap noscript-detail"><p>' + esc(t("detail.notfound")) + '</p></div>'; return; }
+    document.title = p.name + " · " + pick(p.tag) + " · Toni Audio";
+    var md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", pick(d.short) || pick(p.text));
+
+    var f = p.formats || {};
+    var steps = (pick(d.how) || []).map(function (s, i) {
+      return '<li class="step"><span class="step-n">' + (i + 1) + "</span><h3>" + esc(s[0]) + "</h3><p>" + esc(s[1]) + "</p></li>";
+    }).join("");
+    var specs = (pick(d.specs) || []).map(function (r) {
+      return "<tr><th scope=\"row\">" + esc(r[0]) + "</th><td>" + esc(r[1]) + "</td></tr>";
+    }).join("");
+    var formats = [];
+    if (f.vst3Win) formats.push("VST3 (Windows)");
+    if (f.vst3Mac) formats.push("VST3 (macOS)");
+    if (f.au) formats.push("Audio Unit (macOS)");
+    if (f.standalone) formats.push("Standalone");
+    specs += "<tr><th scope=\"row\">" + esc(t("detail.formats")) + "</th><td>" + esc(formats.join(" · ")) + "</td></tr>";
+
+    function reqCol(icon, title, items, extraHtml) {
+      return '<div class="req-col"><h3>' + REQ_ICONS[icon] + "<span>" + esc(title) + "</span></h3><ul>" + list(items) + (extraHtml || "") + "</ul></div>";
+    }
+    var reqs =
+      reqCol("win", t("req.win.t"), [t("req.win.1"), t("req.win.3")]) +
+      reqCol("mac", t("req.mac.t"), [t("req.mac.1"), t("req.mac.3")]) +
+      reqCol("hw", t("detail.hw"), pick(d.hw)) +
+      reqCol("host", t("req.host.t"), [t("req.host.1"), t("req.host.2"), t("req.host.3")], '<li class="muted">' + esc(t("req.host.4")) + "</li>");
+
+    var others = PLUGINS.filter(function (o) { return o.id !== p.id; }).map(function (o) {
+      return '<a class="mini" href="' + esc(o.id) + '.html" style="' + accentStyle(o) + '">' +
+        (o.icon ? '<img src="' + esc(o.icon) + '" alt="" width="40" height="40">' : "") +
+        "<span><b>" + esc(o.name) + "</b><small>" + esc(pick(o.tag)) + "</small></span>" + ARROW + "</a>";
+    }).join("");
+
+    box.innerHTML =
+      '<div class="detail-page" style="' + accentStyle(p) + '">' +
+      '<section class="page-hero detail-hero">' +
+        '<div class="hero-bg" aria-hidden="true"><div class="orb orb-a1"></div><div class="orb orb-a2"></div></div>' +
+        '<div class="wrap">' +
+          '<nav class="crumbs" aria-label="Breadcrumb"><a href="./">' + esc(t("crumb.home")) + '</a><span aria-hidden="true">/</span>' +
+            '<a href="plugins.html">' + esc(t("crumb.plugins")) + '</a><span aria-hidden="true">/</span><span aria-current="page">' + esc(p.name) + "</span></nav>" +
+          '<div class="detail-top">' +
+            '<div class="detail-intro">' + head(p, "h1") +
+              '<p class="detail-lead">' + esc(pick(p.text)) + "</p>" +
+              '<div class="card-badges">' + badges(p) + "</div>" +
+              (f.standalone ? '<p class="card-standalone">' + esc(t("badge.standalone")) + "</p>" : "") +
+              '<p class="detail-soon"><i></i>' + esc(t(p.status === "available" ? "status.available" : "detail.soon")) + "</p>" +
+            "</div>" +
+            '<figure class="detail-shot">' + media(p) + "</figure>" +
+          "</div>" +
+        "</div>" +
+      "</section>" +
+
+      '<section class="section section-tight"><div class="wrap overview">' +
+        '<div><p class="kicker">' + esc(t("detail.overview")) + '</p><div class="prose">' +
+          (pick(d.long) || []).map(function (x) { return "<p>" + esc(x) + "</p>"; }).join("") + "</div></div>" +
+        '<aside class="highlights"><h2>' + esc(t("detail.features")) + '</h2><ul class="card-feats">' + list(pick(p.features)) + "</ul></aside>" +
+      "</div></section>" +
+
+      '<section class="section section-tight"><div class="wrap">' +
+        '<div class="section-head"><p class="kicker">' + esc(p.name) + "</p><h2>" + esc(t("detail.how")) + "</h2></div>" +
+        '<ol class="steps">' + steps + "</ol>" +
+      "</div></section>" +
+
+      '<section class="section section-tight"><div class="wrap">' +
+        '<div class="section-head"><p class="kicker">' + esc(p.name) + "</p><h2>" + esc(t("detail.specs")) + "</h2></div>" +
+        '<div class="spec-wrap"><table class="spec-table"><tbody>' + specs + "</tbody></table></div>" +
+      "</div></section>" +
+
+      '<section class="section section-tight" id="requirements"><div class="wrap">' +
+        '<div class="section-head"><p class="kicker">' + esc(p.name) + "</p><h2>" + esc(t("detail.req")) + "</h2></div>" +
+        '<div class="req-grid">' + reqs + "</div>" +
+      "</div></section>" +
+
+      '<section class="section section-tight"><div class="wrap">' +
+        '<div class="others-head"><h2>' + esc(t("detail.others")) + '</h2><a class="btn btn-ghost" href="plugins.html">' + esc(t("detail.back")) + "</a></div>" +
+        '<div class="others">' + others + "</div>" +
+      "</div></section>" +
+      "</div>";
+  }
+
+  function renderPage() {
+    if (PAGE === "plugins") renderCatalog();
+    else if (PAGE === "detail") renderDetail();
   }
 
   // ---------- Lingua ----------
   function applyLanguage(code) {
     current = I18N[code] ? code : "en";
     document.documentElement.lang = current;
-    document.title = t("meta.title");
+    var pre = PAGE === "plugins" ? "meta.plugins." : "meta.";
+    document.title = t(pre + "title");
     var md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute("content", t("meta.desc"));
+    if (md) md.setAttribute("content", t(pre + "desc"));
     Array.prototype.forEach.call(document.querySelectorAll("[data-i18n]"), function (el) {
       el.textContent = t(el.getAttribute("data-i18n"));
     });
@@ -85,7 +207,7 @@
     Array.prototype.forEach.call(document.querySelectorAll("#lang-menu [role=option]"), function (li) {
       li.setAttribute("aria-selected", li.getAttribute("data-lang") === current ? "true" : "false");
     });
-    renderPlugins();
+    renderPage();
     try { localStorage.setItem(STORE_KEY, current); } catch (e) { /* navigazione privata: va bene lo stesso */ }
   }
 
