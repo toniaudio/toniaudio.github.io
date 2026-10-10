@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5e7a"/><stop offset="1" stop-color="#9b5cff"/></linearGradient>
+  <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<g filter="url(#sh)"><rect x="100.0" y="90.0" width="824" height="824" rx="185.4" fill="url(#bg)"/></g>
+<rect x="100.0" y="90.0" width="824" height="824" rx="185.4" fill="url(#gloss)"/>
+<g transform="translate(100.0,90.0) scale(8.24)"><rect x="24.00" y="24.00" width="21.84" height="21.84" rx="5.46" fill="#fff"/><rect x="54.16" y="24.00" width="21.84" height="21.84" rx="5.46" fill="#fff" fill-opacity=".55"/><rect x="24.00" y="54.16" width="21.84" height="21.84" rx="5.46" fill="#fff" fill-opacity=".55"/><rect x="54.16" y="54.16" width="21.84" height="21.84" rx="5.46" fill="#fff"/></g>
+</svg>

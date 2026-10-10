@@ -90,5 +90,59 @@ window.TONI_PLUGINS = [
       de: ["Clipper mit Oversampling + True-Peak-Limiter", "Automatisches, programmabhängiges Release", "LUFS-Messung: Spotify, Apple Music, YouTube…"],
       fr: ["Clipper suréchantillonné + limiteur true peak", "Relâche automatique selon le programme", "Mesure LUFS : Spotify, Apple Music, YouTube…"]
     }
+  },
+  {
+    id: "materia",
+    name: "Materia",
+    image: "assets/img/materia.webp",
+    icon: "assets/img/materia-icon.svg",
+    accent: ["#ff5f8f", "#a259ff"],
+    status: "soon",
+    formats: { vst3Win: true, vst3Mac: true, au: true, standalone: true },
+    tag: {
+      en: "Drum machine", it: "Drum machine", es: "Caja de ritmos",
+      de: "Drumcomputer", fr: "Boîte à rythmes"
+    },
+    text: {
+      en: "A 16-track drum machine for your own sounds: drag your samples and loops onto the tracks and program 8 patterns of up to 64 steps, with velocity, probability and roll on every step.",
+      it: "Una drum machine a 16 tracce per i tuoi suoni: trascina i tuoi sample e loop sulle tracce e programma 8 pattern fino a 64 passi, con velocity, probabilità e roll su ogni passo.",
+      es: "Una caja de ritmos de 16 pistas para tus propios sonidos: arrastra tus samples y loops a las pistas y programa 8 patrones de hasta 64 pasos, con velocity, probabilidad y roll en cada paso.",
+      de: "Ein Drumcomputer mit 16 Spuren für deine eigenen Sounds: eigene Samples und Loops auf die Spuren ziehen und 8 Patterns mit bis zu 64 Steps programmieren, mit Velocity, Wahrscheinlichkeit und Roll pro Step.",
+      fr: "Une boîte à rythmes 16 pistes pour vos propres sons : glissez vos samples et boucles sur les pistes et programmez 8 patterns jusqu'à 64 pas, avec vélocité, probabilité et roll sur chaque pas."
+    },
+    features: {
+      en: ["16 tracks, drag & drop of your samples", "8 patterns, velocity / probability / roll", "Start / End on the waveform, choke groups, → MIDI"],
+      it: ["16 tracce, drag & drop dei tuoi sample", "8 pattern, velocity / probabilità / roll", "Start / End sulla forma d'onda, gruppi choke, → MIDI"],
+      es: ["16 pistas, arrastrar y soltar tus samples", "8 patrones, velocity / probabilidad / roll", "Start / End en la forma de onda, grupos choke, → MIDI"],
+      de: ["16 Spuren, Drag & Drop eigener Samples", "8 Patterns, Velocity / Wahrscheinlichkeit / Roll", "Start / End auf der Wellenform, Choke-Gruppen, → MIDI"],
+      fr: ["16 pistes, glisser-déposer de vos samples", "8 patterns, vélocité / probabilité / roll", "Start / End sur la forme d'onde, groupes choke, → MIDI"]
+    }
+  },
+  {
+    id: "plasma",
+    name: "Plasma",
+    image: "assets/img/plasma.webp",
+    icon: "assets/img/plasma-icon.svg",
+    accent: ["#7cf06b", "#2fd3c6"],
+    status: "soon",
+    formats: { vst3Win: true, vst3Mac: true, au: true, standalone: true },
+    tag: {
+      en: "Sampler", it: "Campionatore", es: "Sampler",
+      de: "Sampler", fr: "Échantillonneur"
+    },
+    text: {
+      en: "A 16-pad sampler on one page: drop or record a sound, stretch it to the song tempo without changing its pitch, auto-chop it across the pads (on the hits, in equal parts or by hand) and move it with a filter and two LFOs.",
+      it: "Un campionatore a 16 pad in una sola pagina: trascina o registra un suono, adattalo al tempo del brano senza cambiarne l'intonazione, taglialo sui pad con l'auto-chop (sui colpi, in parti uguali o a mano) e muovilo con filtro e due LFO.",
+      es: "Un sampler de 16 pads en una sola página: arrastra o graba un sonido, ajústalo al tempo de la canción sin cambiar su tono, córtalo en los pads con el auto-chop (en los golpes, en partes iguales o a mano) y muévelo con filtro y dos LFO.",
+      de: "Ein Sampler mit 16 Pads auf einer Seite: Sound hineinziehen oder aufnehmen, ohne Tonhöhenänderung an das Songtempo anpassen, mit Auto-Chop auf die Pads schneiden (auf den Schlägen, in gleiche Teile oder von Hand) und mit Filter und zwei LFOs bewegen.",
+      fr: "Un échantillonneur 16 pads sur une seule page : glissez ou enregistrez un son, calez-le sur le tempo sans changer sa hauteur, découpez-le sur les pads avec l'auto-chop (sur les attaques, en parts égales ou à la main) et animez-le avec un filtre et deux LFO."
+    },
+    features: {
+      en: ["Record from input or resample", "Time stretch with tempo sync, auto-chop to pads", "ADSR, 4 filters, 2 LFOs on pitch, time or filter"],
+      it: ["Registra dall'ingresso o in resample", "Time stretch a tempo, auto-chop sui pad", "ADSR, 4 filtri, 2 LFO su pitch, tempo o filtro"],
+      es: ["Graba desde la entrada o en resample", "Time stretch al tempo, auto-chop en los pads", "ADSR, 4 filtros, 2 LFO en pitch, tiempo o filtro"],
+      de: ["Aufnahme vom Eingang oder Resampling", "Time-Stretch im Tempo, Auto-Chop auf die Pads", "ADSR, 4 Filter, 2 LFOs auf Pitch, Time oder Filter"],
+      fr: ["Enregistrement depuis l'entrée ou resample", "Time stretch au tempo, auto-chop sur les pads", "ADSR, 4 filtres, 2 LFO sur pitch, temps ou filtre"]
+    }
   }
 ];
