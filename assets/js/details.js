@@ -259,63 +259,63 @@ window.TONI_DETAILS = {
     long: {
       en: [
         "Materia is a step drum machine built around your own sounds. There are no factory kits: you drag your samples, one-shots and loops onto 16 tracks and build the beat on a clear grid, just like the classic drum machines.",
-        "Every step has its own velocity, probability and roll, so patterns stay alive. On each track you pick the exact part of the sound directly on the waveform and shape it with attack, release, pitch, filter and drive. Patterns lock to the tempo of your DAW and can be dragged into the arrangement as MIDI clips. Loaded sounds are saved inside the project, so it stays complete even if you move the files."
+        "Patterns loop over 2 to 16 bars on a 1/16, 1/32 or 1/64 grid, or with hits placed freely, and every hit has its own velocity, probability and roll, so patterns stay alive. On each track you pick the exact part of the sound directly on the waveform and shape it with attack, decay, pitch, filter and drive; sounds move between Materia and Plasma just by dragging. Patterns lock to the tempo of your DAW and can be dragged into the arrangement as MIDI clips. Loaded sounds are saved inside the project, so it stays complete even if you move the files."
       ],
       it: [
         "Materia è una drum machine a passi costruita attorno ai tuoi suoni. Non ci sono kit di fabbrica: trascini i tuoi sample, colpi singoli e loop su 16 tracce e costruisci il beat su una griglia chiara, proprio come nelle drum machine classiche.",
-        "Ogni passo ha la sua velocity, probabilità e roll, così i pattern restano vivi. Su ogni traccia scegli la parte esatta del suono direttamente sulla forma d'onda e la modelli con attack, release, pitch, filtro e drive. I pattern seguono il tempo della DAW e si trascinano nell'arrangiamento come clip MIDI. I suoni caricati vengono salvati nel progetto, che resta completo anche se sposti i file."
+        "I pattern girano su loop da 2 a 16 battute con griglia 1/16, 1/32 o 1/64, oppure con colpi messi liberamente, e ogni colpo ha la sua velocity, probabilità e roll, così i pattern restano vivi. Su ogni traccia scegli la parte esatta del suono direttamente sulla forma d'onda e la modelli con attack, decay, pitch, filtro e drive; i suoni passano tra Materia e Plasma semplicemente trascinandoli. I pattern seguono il tempo della DAW e si trascinano nell'arrangiamento come clip MIDI. I suoni caricati vengono salvati nel progetto, che resta completo anche se sposti i file."
       ],
       es: [
         "Materia es una caja de ritmos por pasos construida alrededor de tus propios sonidos. No hay kits de fábrica: arrastras tus samples, golpes sueltos y loops a 16 pistas y construyes el beat en una cuadrícula clara, como en las cajas de ritmos clásicas.",
-        "Cada paso tiene su velocity, probabilidad y roll, así los patrones siguen vivos. En cada pista eliges la parte exacta del sonido directamente sobre la forma de onda y la moldeas con attack, release, pitch, filtro y drive. Los patrones siguen el tempo de tu DAW y se arrastran al arreglo como clips MIDI. Los sonidos cargados se guardan en el proyecto, que sigue completo aunque muevas los archivos."
+        "Los patrones giran en loops de 2 a 16 compases con rejilla de 1/16, 1/32 o 1/64, o con golpes colocados libremente, y cada golpe tiene su velocity, probabilidad y roll, así los patrones siguen vivos. En cada pista eliges la parte exacta del sonido directamente sobre la forma de onda y la moldeas con attack, decay, pitch, filtro y drive; los sonidos pasan entre Materia y Plasma con solo arrastrarlos. Los patrones siguen el tempo de tu DAW y se arrastran al arreglo como clips MIDI. Los sonidos cargados se guardan en el proyecto, que sigue completo aunque muevas los archivos."
       ],
       de: [
         "Materia ist ein Step-Drumcomputer, der auf deinen eigenen Sounds aufbaut. Es gibt keine Werkskits: Du ziehst deine Samples, One-Shots und Loops auf 16 Spuren und baust den Beat auf einem übersichtlichen Raster, wie bei den klassischen Drumcomputern.",
-        "Jeder Step hat eigene Velocity, Wahrscheinlichkeit und Roll, so bleiben Patterns lebendig. Auf jeder Spur wählst du den genauen Teil des Sounds direkt auf der Wellenform und formst ihn mit Attack, Release, Pitch, Filter und Drive. Patterns folgen dem Tempo deiner DAW und lassen sich als MIDI-Clips ins Arrangement ziehen. Geladene Sounds werden im Projekt gespeichert, das auch dann vollständig bleibt, wenn du die Dateien verschiebst."
+        "Patterns laufen als Loops von 2 bis 16 Takten im 1/16-, 1/32- oder 1/64-Raster oder mit frei gesetzten Schlägen, und jeder Schlag hat eigene Velocity, Wahrscheinlichkeit und Roll, so bleiben Patterns lebendig. Auf jeder Spur wählst du den genauen Teil des Sounds direkt auf der Wellenform und formst ihn mit Attack, Decay, Pitch, Filter und Drive; Sounds wandern einfach per Ziehen zwischen Materia und Plasma. Patterns folgen dem Tempo deiner DAW und lassen sich als MIDI-Clips ins Arrangement ziehen. Geladene Sounds werden im Projekt gespeichert, das auch dann vollständig bleibt, wenn du die Dateien verschiebst."
       ],
       fr: [
         "Materia est une boîte à rythmes pas à pas construite autour de vos propres sons. Pas de kits d'usine : vous glissez vos samples, one-shots et boucles sur 16 pistes et construisez le beat sur une grille claire, comme sur les boîtes à rythmes classiques.",
-        "Chaque pas a sa vélocité, sa probabilité et son roll, pour des patterns vivants. Sur chaque piste, vous choisissez la partie exacte du son directement sur la forme d'onde et la sculptez avec attack, release, pitch, filtre et drive. Les patterns suivent le tempo de votre DAW et se glissent dans l'arrangement comme clips MIDI. Les sons chargés sont enregistrés dans le projet, qui reste complet même si vous déplacez les fichiers."
+        "Les patterns tournent en boucles de 2 à 16 mesures sur une grille 1/16, 1/32 ou 1/64, ou avec des coups placés librement, et chaque coup a sa vélocité, sa probabilité et son roll, pour des patterns vivants. Sur chaque piste, vous choisissez la partie exacte du son directement sur la forme d'onde et la sculptez avec attack, decay, pitch, filtre et drive ; les sons passent entre Materia et Plasma d'un simple glisser. Les patterns suivent le tempo de votre DAW et se glissent dans l'arrangement comme clips MIDI. Les sons chargés sont enregistrés dans le projet, qui reste complet même si vous déplacez les fichiers."
       ]
     },
     how: {
       en: [
         ["Load", "Drag audio files or whole folders from Finder or Explorer onto the tracks: WAV, AIFF, FLAC, MP3 and more."],
-        ["Program", "Click the steps on the grid to write up to 8 patterns of 16, 32 or 64 steps, with swing from straight to dotted."],
-        ["Shape", "Choose Start and End on the waveform, then set attack, release, pitch, filter, drive, reverse and choke groups."],
+        ["Program", "Click the grid, or record live from a MIDI controller or the TAP button, to write up to 8 patterns, loops of 2 to 16 bars, on a 1/16, 1/32 or 1/64 grid or freely."],
+        ["Shape", "Choose Start and End on the waveform, then set attack, decay, pitch, filter, drive, reverse and choke groups."],
         ["Play", "Patterns play in time with your DAW; drag them out as MIDI or trigger the tracks from a controller."]
       ],
       it: [
         ["Carica", "Trascina file audio o intere cartelle dal Finder o da Esplora risorse sulle tracce: WAV, AIFF, FLAC, MP3 e altri."],
-        ["Programma", "Clicca i passi sulla griglia per scrivere fino a 8 pattern da 16, 32 o 64 passi, con swing da dritto a puntato."],
-        ["Modella", "Scegli Start e End sulla forma d'onda, poi regola attack, release, pitch, filtro, drive, reverse e gruppi choke."],
+        ["Programma", "Clicca sulla griglia, o registra dal vivo da controller MIDI o col tasto TAP, per scrivere fino a 8 pattern, loop da 2 a 16 battute, con griglia 1/16, 1/32, 1/64 o liberi."],
+        ["Modella", "Scegli Start e End sulla forma d'onda, poi regola attack, decay, pitch, filtro, drive, reverse e gruppi choke."],
         ["Suona", "I pattern suonano a tempo con la DAW; trascinali fuori come MIDI o suona le tracce da un controller."]
       ],
       es: [
         ["Carga", "Arrastra archivos de audio o carpetas enteras desde Finder o el Explorador a las pistas: WAV, AIFF, FLAC, MP3 y más."],
-        ["Programa", "Haz clic en los pasos de la cuadrícula para escribir hasta 8 patrones de 16, 32 o 64 pasos, con swing de recto a puntillo."],
-        ["Moldea", "Elige Start y End sobre la forma de onda y ajusta attack, release, pitch, filtro, drive, reverse y grupos choke."],
+        ["Programa", "Haz clic en la rejilla, o graba en directo desde un controlador MIDI o con el botón TAP, para escribir hasta 8 patrones, loops de 2 a 16 compases, en rejilla de 1/16, 1/32, 1/64 o libres."],
+        ["Moldea", "Elige Start y End sobre la forma de onda y ajusta attack, decay, pitch, filtro, drive, reverse y grupos choke."],
         ["Toca", "Los patrones suenan a tempo con tu DAW; arrástralos como MIDI o dispara las pistas desde un controlador."]
       ],
       de: [
         ["Laden", "Ziehe Audiodateien oder ganze Ordner aus Finder oder Explorer auf die Spuren: WAV, AIFF, FLAC, MP3 und mehr."],
-        ["Programmieren", "Klicke die Steps im Raster, um bis zu 8 Patterns mit 16, 32 oder 64 Steps zu schreiben, mit Swing von gerade bis punktiert."],
-        ["Formen", "Wähle Start und End auf der Wellenform, dann Attack, Release, Pitch, Filter, Drive, Reverse und Choke-Gruppen."],
+        ["Programmieren", "Klicke ins Raster oder nimm live über einen MIDI-Controller oder die TAP-Taste auf, um bis zu 8 Patterns als Loops von 2 bis 16 Takten zu schreiben, im 1/16-, 1/32-, 1/64-Raster oder frei."],
+        ["Formen", "Wähle Start und End auf der Wellenform, dann Attack, Decay, Pitch, Filter, Drive, Reverse und Choke-Gruppen."],
         ["Spielen", "Patterns laufen im Tempo deiner DAW; ziehe sie als MIDI heraus oder spiele die Spuren über einen Controller."]
       ],
       fr: [
         ["Charger", "Glissez des fichiers audio ou des dossiers entiers depuis le Finder ou l'Explorateur sur les pistes : WAV, AIFF, FLAC, MP3 et plus."],
-        ["Programmer", "Cliquez sur les pas de la grille pour écrire jusqu'à 8 patterns de 16, 32 ou 64 pas, avec un swing de droit à pointé."],
-        ["Sculpter", "Choisissez Start et End sur la forme d'onde, puis réglez attack, release, pitch, filtre, drive, reverse et groupes choke."],
+        ["Programmer", "Cliquez sur la grille, ou enregistrez en direct depuis un contrôleur MIDI ou le bouton TAP, pour écrire jusqu'à 8 patterns, boucles de 2 à 16 mesures, sur une grille 1/16, 1/32, 1/64 ou en libre."],
+        ["Sculpter", "Choisissez Start et End sur la forme d'onde, puis réglez attack, decay, pitch, filtre, drive, reverse et groupes choke."],
         ["Jouer", "Les patterns jouent au tempo de votre DAW ; exportez-les en MIDI par glisser-déposer ou jouez les pistes depuis un contrôleur."]
       ]
     },
     specs: {
-      en: [["Type", "16-track step drum machine (instrument)"], ["Patterns", "8, of 16, 32 or 64 steps"], ["Per step", "Velocity, probability, roll"], ["Output", "One stereo output"], ["MIDI", "Notes C1–D#2 play tracks 1–16; pattern → MIDI clip"], ["Samples", "Up to 30 s per track, saved in the project"], ["CPU", "About 0.5 % of one core (full pattern, 48 kHz)"]],
-      it: [["Tipo", "Drum machine a passi con 16 tracce (strumento)"], ["Pattern", "8, da 16, 32 o 64 passi"], ["Per passo", "Velocity, probabilità, roll"], ["Uscita", "Una uscita stereo"], ["MIDI", "Note C1–D#2 suonano le tracce 1–16; pattern → clip MIDI"], ["Sample", "Fino a 30 s per traccia, salvati nel progetto"], ["CPU", "Circa 0,5 % di un core (pattern pieno, 48 kHz)"]],
-      es: [["Tipo", "Caja de ritmos por pasos de 16 pistas (instrumento)"], ["Patrones", "8, de 16, 32 o 64 pasos"], ["Por paso", "Velocity, probabilidad, roll"], ["Salida", "Una salida estéreo"], ["MIDI", "Notas C1–D#2 tocan las pistas 1–16; patrón → clip MIDI"], ["Samples", "Hasta 30 s por pista, guardados en el proyecto"], ["CPU", "Alrededor del 0,5 % de un núcleo (patrón completo, 48 kHz)"]],
-      de: [["Typ", "Step-Drumcomputer mit 16 Spuren (Instrument)"], ["Patterns", "8, mit 16, 32 oder 64 Steps"], ["Pro Step", "Velocity, Wahrscheinlichkeit, Roll"], ["Ausgang", "Ein Stereo-Ausgang"], ["MIDI", "Noten C1–D#2 spielen Spuren 1–16; Pattern → MIDI-Clip"], ["Samples", "Bis zu 30 s pro Spur, im Projekt gespeichert"], ["CPU", "Etwa 0,5 % eines Kerns (volles Pattern, 48 kHz)"]],
-      fr: [["Type", "Boîte à rythmes pas à pas 16 pistes (instrument)"], ["Patterns", "8, de 16, 32 ou 64 pas"], ["Par pas", "Vélocité, probabilité, roll"], ["Sortie", "Une sortie stéréo"], ["MIDI", "Notes C1–D#2 jouent les pistes 1–16 ; pattern → clip MIDI"], ["Samples", "Jusqu'à 30 s par piste, enregistrés dans le projet"], ["CPU", "Environ 0,5 % d'un cœur (pattern complet, 48 kHz)"]]
+      en: [["Type", "16-track drum machine (instrument)"], ["Patterns", "8, loops of 2, 4, 8 or 16 bars"], ["Grid", "1/16, 1/32, 1/64 or free (no quantize)"], ["Per hit", "Velocity, probability, roll"], ["Output", "One stereo output"], ["MIDI", "Notes C1–D#2 play tracks 1–16; pattern → MIDI clip"], ["Samples", "Up to 30 s per track, saved in the project"], ["CPU", "About 0.5 % of one core (full pattern, 48 kHz)"]],
+      it: [["Tipo", "Drum machine a 16 tracce (strumento)"], ["Pattern", "8, loop da 2, 4, 8 o 16 battute"], ["Griglia", "1/16, 1/32, 1/64 o libera (senza quantizzazione)"], ["Per colpo", "Velocity, probabilità, roll"], ["Uscita", "Una uscita stereo"], ["MIDI", "Note C1–D#2 suonano le tracce 1–16; pattern → clip MIDI"], ["Sample", "Fino a 30 s per traccia, salvati nel progetto"], ["CPU", "Circa 0,5 % di un core (pattern pieno, 48 kHz)"]],
+      es: [["Tipo", "Caja de ritmos de 16 pistas (instrumento)"], ["Patrones", "8, loops de 2, 4, 8 o 16 compases"], ["Rejilla", "1/16, 1/32, 1/64 o libre (sin cuantización)"], ["Por golpe", "Velocity, probabilidad, roll"], ["Salida", "Una salida estéreo"], ["MIDI", "Notas C1–D#2 tocan las pistas 1–16; patrón → clip MIDI"], ["Samples", "Hasta 30 s por pista, guardados en el proyecto"], ["CPU", "Alrededor del 0,5 % de un núcleo (patrón completo, 48 kHz)"]],
+      de: [["Typ", "Drumcomputer mit 16 Spuren (Instrument)"], ["Patterns", "8, Loops mit 2, 4, 8 oder 16 Takten"], ["Raster", "1/16, 1/32, 1/64 oder frei (ohne Quantisierung)"], ["Pro Schlag", "Velocity, Wahrscheinlichkeit, Roll"], ["Ausgang", "Ein Stereo-Ausgang"], ["MIDI", "Noten C1–D#2 spielen Spuren 1–16; Pattern → MIDI-Clip"], ["Samples", "Bis zu 30 s pro Spur, im Projekt gespeichert"], ["CPU", "Etwa 0,5 % eines Kerns (volles Pattern, 48 kHz)"]],
+      fr: [["Type", "Boîte à rythmes 16 pistes (instrument)"], ["Patterns", "8, boucles de 2, 4, 8 ou 16 mesures"], ["Grille", "1/16, 1/32, 1/64 ou libre (sans quantification)"], ["Par coup", "Vélocité, probabilité, roll"], ["Sortie", "Une sortie stéréo"], ["MIDI", "Notes C1–D#2 jouent les pistes 1–16 ; pattern → clip MIDI"], ["Samples", "Jusqu'à 30 s par piste, enregistrés dans le projet"], ["CPU", "Environ 0,5 % d'un cœur (pattern complet, 48 kHz)"]]
     },
     hw: {
       en: ["64-bit dual-core processor or better", "4 GB RAM (8 GB recommended; memory grows with the loaded samples)", "About 150 MB of free disk space, plus your samples", "Screen 1280 × 800 or larger", "MIDI keyboard or pad controller (optional)"],
@@ -338,23 +338,23 @@ window.TONI_DETAILS = {
     long: {
       en: [
         "Plasma is a 16-pad sampler that fits on a single page. Drop in a loop, or record one straight into the plugin from your audio input or by resampling its own output, and start playing it right away.",
-        "Granular time stretch matches any loop to the song tempo without changing its pitch, and Auto-Chop slices it across the pads on the hits, in equal parts or by hand. Each pad has its own envelope, filter and play mode, and two LFOs can move pitch, time or filter for sounds that evolve. Everything you load or record is saved inside the project."
+        "Granular time stretch matches any loop to the song tempo without changing its pitch, and Auto-Chop slices it across the pads on the hits, in equal parts or by hand. Each pad has its own envelope, filter and play mode, and two LFOs can move pitch, time or filter for sounds that evolve. Everything you load or record is saved inside the project, and sounds move to and from Materia just by dragging: a source as the whole file, a pad as its edited sound."
       ],
       it: [
         "Plasma è un campionatore a 16 pad che sta tutto in una pagina. Trascina un loop, oppure registralo direttamente nel plugin dall'ingresso audio o ricampionando la sua stessa uscita, e inizia subito a suonarlo.",
-        "Il time stretch granulare adatta qualsiasi loop al tempo del brano senza cambiarne l'intonazione, e l'Auto-Chop lo taglia sui pad: sui colpi, in parti uguali o a mano. Ogni pad ha il suo inviluppo, filtro e modo di riproduzione, e due LFO possono muovere pitch, tempo o filtro per suoni che si evolvono. Tutto ciò che carichi o registri viene salvato nel progetto."
+        "Il time stretch granulare adatta qualsiasi loop al tempo del brano senza cambiarne l'intonazione, e l'Auto-Chop lo taglia sui pad: sui colpi, in parti uguali o a mano. Ogni pad ha il suo inviluppo, filtro e modo di riproduzione, e due LFO possono muovere pitch, tempo o filtro per suoni che si evolvono. Tutto ciò che carichi o registri viene salvato nel progetto, e i suoni passano da e verso Materia semplicemente trascinandoli: una sorgente come file intero, un pad con il suo suono editato."
       ],
       es: [
         "Plasma es un sampler de 16 pads que cabe en una sola página. Arrastra un loop, o grábalo directamente en el plugin desde tu entrada de audio o remuestreando su propia salida, y empieza a tocarlo enseguida.",
-        "El time stretch granular ajusta cualquier loop al tempo de la canción sin cambiar su tono, y el Auto-Chop lo corta en los pads: en los golpes, en partes iguales o a mano. Cada pad tiene su envolvente, filtro y modo de reproducción, y dos LFO pueden mover pitch, tiempo o filtro para sonidos que evolucionan. Todo lo que cargas o grabas se guarda en el proyecto."
+        "El time stretch granular ajusta cualquier loop al tempo de la canción sin cambiar su tono, y el Auto-Chop lo corta en los pads: en los golpes, en partes iguales o a mano. Cada pad tiene su envolvente, filtro y modo de reproducción, y dos LFO pueden mover pitch, tiempo o filtro para sonidos que evolucionan. Todo lo que cargas o grabas se guarda en el proyecto, y los sonidos pasan a y desde Materia con solo arrastrarlos: una fuente como archivo entero, un pad con su sonido editado."
       ],
       de: [
         "Plasma ist ein Sampler mit 16 Pads, der auf eine einzige Seite passt. Zieh einen Loop hinein oder nimm ihn direkt im Plugin auf, vom Audioeingang oder per Resampling des eigenen Ausgangs, und spiel ihn sofort.",
-        "Granulares Time-Stretching passt jeden Loop ohne Tonhöhenänderung an das Songtempo an, und Auto-Chop verteilt ihn auf die Pads: auf den Schlägen, in gleiche Teile oder von Hand. Jedes Pad hat eigene Hüllkurve, Filter und Wiedergabemodus, und zwei LFOs bewegen Pitch, Time oder Filter für Sounds, die sich entwickeln. Alles, was du lädst oder aufnimmst, wird im Projekt gespeichert."
+        "Granulares Time-Stretching passt jeden Loop ohne Tonhöhenänderung an das Songtempo an, und Auto-Chop verteilt ihn auf die Pads: auf den Schlägen, in gleiche Teile oder von Hand. Jedes Pad hat eigene Hüllkurve, Filter und Wiedergabemodus, und zwei LFOs bewegen Pitch, Time oder Filter für Sounds, die sich entwickeln. Alles, was du lädst oder aufnimmst, wird im Projekt gespeichert, und Sounds wandern per Ziehen zu und von Materia: eine Quelle als ganze Datei, ein Pad mit seinem bearbeiteten Sound."
       ],
       fr: [
         "Plasma est un échantillonneur 16 pads qui tient sur une seule page. Glissez une boucle, ou enregistrez-la directement dans le plugin depuis votre entrée audio ou en rééchantillonnant sa propre sortie, et jouez-la tout de suite.",
-        "Le time stretch granulaire cale n'importe quelle boucle sur le tempo du morceau sans changer sa hauteur, et l'Auto-Chop la découpe sur les pads : sur les attaques, en parts égales ou à la main. Chaque pad a son enveloppe, son filtre et son mode de lecture, et deux LFO peuvent animer pitch, temps ou filtre pour des sons qui évoluent. Tout ce que vous chargez ou enregistrez est sauvegardé dans le projet."
+        "Le time stretch granulaire cale n'importe quelle boucle sur le tempo du morceau sans changer sa hauteur, et l'Auto-Chop la découpe sur les pads : sur les attaques, en parts égales ou à la main. Chaque pad a son enveloppe, son filtre et son mode de lecture, et deux LFO peuvent animer pitch, temps ou filtre pour des sons qui évoluent. Tout ce que vous chargez ou enregistrez est sauvegardé dans le projet, et les sons passent vers et depuis Materia d'un simple glisser : une source comme fichier entier, un pad avec son son édité."
       ]
     },
     how: {
